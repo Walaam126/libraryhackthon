@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addMember } from '../store/actions';
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { LibBtn,PageTitle } from "../styles";
 function MemberForm() {
     const history = useHistory();
     const dispatch = useDispatch ();
@@ -34,12 +35,13 @@ function MemberForm() {
         history.push("/members");
 }
   return (
-    
-<div className="container">
+    <>
+      <br></br>
+    <div className="container">
         <div className="row">
         <div className="col-3"></div> 
         <div className="col-6">
-        <h2> Add New Member</h2>  
+        <PageTitle style={{textAlign:"center"}}> Add New Member</PageTitle><br></br><br></br>
         <form  onSubmit={handleSubmit}>
     <div className="form-outline mb-4">
     <label className="form-label">First Name</label>
@@ -58,14 +60,15 @@ function MemberForm() {
   <option value="platinum">Platinum</option>
 </select>
     </div>
-    <button type="submit" className="btn btn-primary btn-block mb-4">Add </button> 
+    <LibBtn type="submit" className="btn btn-block mb-4">Add </LibBtn> 
                       
 </form>               
         </div>
   
         <div className="col-3"></div> 
     </div>
-    </div>
+      </div>
+      </>
   );
 }
 

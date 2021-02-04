@@ -6,7 +6,6 @@ import { ImEye } from 'react-icons/im';
 function Book({ book }) {
   return (
       <tr>
-            <td>{book.id}</td>
           <td>
               {book.title} <br></br> {book.author}</td>
           <td>{book.genre.join(" - ")}</td>

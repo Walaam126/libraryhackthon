@@ -7,11 +7,12 @@ import MemberProfile from "./component/MemberProfile";
 import Navbar from "./component/Navbar";
 import Home from "./component/Home";
 import { Route, Switch } from "react-router";
-
+import {GlobalStyle} from "./styles"
 function App() {
   return (
     <div className="App">
-       <Navbar/>
+      <Navbar />
+      <GlobalStyle />
       <Switch>
       <Route path="/books/Addbook">
           <BookForm />

@@ -4,7 +4,7 @@ import BorrowedMembers from "./BorrowedMembers";
 import ToBorrowMembers from "./ToBorrowMembers";
 import { useState } from "react";
 import { BorrowBook, ReturnBook } from '../store/actions';
-
+import { LibBtn,PageTitle,Comment } from "../styles";
 function BookDetails() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -52,11 +52,13 @@ function BookDetails() {
         <div>
             <div className="container">
             <br></br><br></br>
-                <h1>{_book.title}</h1>
+                <PageTitle>{_book.title}</PageTitle>
                 <h4>{_book.author}</h4>
                 <p>{_book.genre.join(" - ")}</p>
-                <p>{_book.available ? "available" : "unavailable"}</p>
-                {_book.available ? "" :<button className="btn btn-primary" onClick={returnBook}>Return</button>}
+                <div style={{ fontWeight: "bold" }}>
+                {_book.available ? <p style={{ color: "green" }}>Available</p>
+                    : <p style={{ color: "red" }}>Unavailable</p>}
+                </div>
         
                 <br></br>
                 <h5>Borrowed by:</h5>
@@ -74,11 +76,12 @@ function BookDetails() {
                             <option value="" selected>Select Member To Borrow</option>
                             {memberslist}
                             </select>
-                            <button className="btn btn-primary" onClick={borrowBook}
+                            <LibBtn className="btn" onClick={borrowBook}
                             disabled={_book.available ? false : true}
-                            >Set</button>
+                            style={{marginLeft:"10px"}}>Set</LibBtn>
+                             {_book.available ? "" :<LibBtn className="btn" onClick={returnBook} style={{float:"right", marginLeft:"10px"}}>Return</LibBtn>}
                         </div>
-                        {!borrowstat?<p>Failed! member has reached maximum amount of membership books</p>:""}
+                        {!borrowstat?<Comment>Failed! member has reached maximum amount of membership books</Comment>:""}
                     </div>
                 </div>
             </div>

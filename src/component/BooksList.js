@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import NameSearch from './NameSearch';
 import GenreSearch from './GenreSearch';
+import { AddNewbtn, PageTitle } from "../styles";
 function BookList() {
     const [searchType, setsearchType] = useState("");
     const setRadioValue = (e) => {
@@ -26,7 +27,7 @@ function BookList() {
     return (
       <><br></br>
             <div className="container">
-            <h1>Books List</h1><br></br>
+            <PageTitle>Books List</PageTitle><br></br>
         <div className="row">
         <div className="col-11">
             <div className="form-check">
@@ -45,12 +46,11 @@ function BookList() {
                         <br></br>
                   {/* <MoviesTable> */}
         <Link to="/books/Addbook">
-            <button className="btn btn-primary">Add New Book</button>
+            <AddNewbtn className="btn">Add New Book</AddNewbtn>
             </Link>
-      <table className="table table-hover table-bordered results">
+              <table className="table table-hover table-bordered results">
         <thead>
           <tr>
-          <th>ID</th>
            <th>Title</th>
         <th>Genre</th>
         <th>Available</th>
