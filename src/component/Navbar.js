@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Navitem } from "../styles";
 import { GiBookshelf } from 'react-icons/gi';
 function Navbar() {  

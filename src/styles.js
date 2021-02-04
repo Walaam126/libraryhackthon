@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { Link,NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const GlobalStyle = createGlobalStyle`
 body{
 background-color:#F1EBE4;

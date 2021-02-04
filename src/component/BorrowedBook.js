@@ -7,7 +7,7 @@ function BorrowedBook({ book }) {
     <div>
    <h5 className="mt-0">{book.title}</h5>
             <p>{book.author}</p>
-            <Link to={`/books/${book.slug}`}><a className="stretched-link">Go to book page</a>
+            <Link to={`/books/${book.slug}`}  className="stretched-link">Go to book page
             </Link>
     </div>
    </div><br></br> 
